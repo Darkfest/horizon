@@ -1,0 +1,73 @@
+$spinner_border_color: crimson;
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(#000000 0% , #203c54 100% );
+	z-index: 20;
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 1s, visibility 1s;
+	
+	&__spinner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		border-top: 0.2rem solid #d4d4d4;
+		border-bottom: 0.2rem solid #d4d4d4;
+		border-right: 0.2rem solid #636363;
+		border-left: 0.2rem solid #636363;
+
+		&_xbig {
+			width: 9.4rem;
+			height: 9.4rem;
+			animation: rotate 5s linear infinite;
+		}
+
+		&_big {
+			width: 7.2rem;
+			height: 7.2rem;
+			animation: to_back 5s linear infinite;
+		}
+
+		&_mid {
+			width: 5.3rem;
+			height: 5.3rem;
+			animation: to_back 5s linear infinite;
+		}
+
+		&_sml {
+			width: 4rem;
+			height: 4rem;
+			animation: to_back 5s linear infinite;
+		}
+
+		&_xsml {
+			width: 2.8rem;
+			height: 2.8rem;
+			animation: to_back 5s linear infinite;
+		}
+	}
+}
+
+.done {
+	opacity: 0;
+	visibility: hidden;
+}
+
+@keyframes rotate {
+	from {transform: translate(-50%, -50%) rotate(0deg);}
+	to {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+@keyframes to_back {
+	0% {transform: translate(-50%, -50%) rotate(0deg);}
+	25% {transform: translate(-50%, -50%) rotate(20deg);}
+	50% {transform: translate(-50%, -50%) rotate(0deg);}
+	75% {transform: translate(-50%, -50%) rotate(-20deg);}
+	100% {transform: translate(-50%, -50%) rotate(0deg);}
+}

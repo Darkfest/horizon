@@ -1,0 +1,281 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+@font-face {
+  font-family: "Exo_2";
+  src: url("../fonts/Exo2ExtraLight.ttf"); }
+
+*, *:after, *:before {
+  box-sizing: border-box; }
+
+body, html {
+  font-size: 12px; }
+  @media (min-width: 360px) {
+    body, html {
+      font-size: 14px; } }
+  @media (min-width: 768px) {
+    body, html {
+      font-size: 16px; } }
+  @media (min-width: 1024px) {
+    body, html {
+      font-size: 18px; } }
+  @media (min-width: 1366px) {
+    body, html {
+      font-size: 20px; } }
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(#000000 0%, #203c54 100%);
+  z-index: 20;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s, visibility 1s; }
+  .preloader__spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: 0.2rem solid #d4d4d4;
+    border-bottom: 0.2rem solid #d4d4d4;
+    border-right: 0.2rem solid #636363;
+    border-left: 0.2rem solid #636363; }
+    .preloader__spinner_xbig {
+      width: 9.4rem;
+      height: 9.4rem;
+      animation: rotate 5s linear infinite; }
+    .preloader__spinner_big {
+      width: 7.2rem;
+      height: 7.2rem;
+      animation: to_back 5s linear infinite; }
+    .preloader__spinner_mid {
+      width: 5.3rem;
+      height: 5.3rem;
+      animation: to_back 5s linear infinite; }
+    .preloader__spinner_sml {
+      width: 4rem;
+      height: 4rem;
+      animation: to_back 5s linear infinite; }
+    .preloader__spinner_xsml {
+      width: 2.8rem;
+      height: 2.8rem;
+      animation: to_back 5s linear infinite; }
+
+.done {
+  opacity: 0;
+  visibility: hidden; }
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg); } }
+
+@keyframes to_back {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  25% {
+    transform: translate(-50%, -50%) rotate(20deg); }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  75% {
+    transform: translate(-50%, -50%) rotate(-20deg); }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg); } }
+
+.wrapper {
+  height: 100vh;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: yellow;
+  position: relative; }
+  .wrapper__background {
+    width: 500%;
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    background: url(../img/main_bg.jpg);
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    background-position: 0;
+    transition: left 1s, transform 1s; }
+  .wrapper__container {
+    transition: margin-left 1s, transform 1s;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 500%; }
+
+.section {
+  height: 100vh;
+  flex: 0 0 20%;
+  text-align: center;
+  font: 2.5rem "Exo_2";
+  font-weight: bold;
+  color: #f3f3f3;
+  position: relative; }
+
+.title {
+  border-left: 0.25rem solid #fff;
+  position: absolute;
+  padding: .5rem 2rem;
+  top: 1rem;
+  left: 1rem; }
+
+.picture-wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  transition: transform 1s; }
+  .picture-wrapper__image {
+    width: auto;
+    height: 100vh; }
+    .picture-wrapper__image_big-star {
+      height: 65vh; }
+      @media (orientation: portrait) {
+        .picture-wrapper__image_big-star {
+          width: 100%;
+          height: auto; } }
+    .picture-wrapper__image_small-cubs {
+      height: auto;
+      width: 150%; }
+    .picture-wrapper__image_middle-cubs {
+      height: auto;
+      width: 150%; }
+    .picture-wrapper__image_big-cubs {
+      width: 130%; }
+    .picture-wrapper__image_small-cubs-2 {
+      width: 140%;
+      height: auto; }
+    .picture-wrapper__image_middle-cubs-2 {
+      height: auto;
+      max-width: 100%;
+      max-height: 100vh; }
+    .picture-wrapper__image_big-cubs-2 {
+      height: auto;
+      width: 130%;
+      max-height: 90vh; }
+      @media (orientation: portrait) {
+        .picture-wrapper__image_big-cubs-2 {
+          height: auto;
+          width: 130%; } }
+    .picture-wrapper__image_abstract-girl {
+      min-height: 90vh; }
+      @media (orientation: portrait) {
+        .picture-wrapper__image_abstract-girl {
+          min-height: auto;
+          height: auto;
+          width: 130%; } }
+    .picture-wrapper__image_pink-brash {
+      height: 50vh;
+      margin: auto 0 0 auto; }
+      @media (orientation: portrait) {
+        .picture-wrapper__image_pink-brash {
+          height: auto;
+          width: 60%; } }
+    .picture-wrapper__image_butterfly {
+      margin: auto 0 0 auto;
+      height: auto;
+      max-height: 100vh;
+      min-height: 90vh; }
+      @media (orientation: portrait) {
+        .picture-wrapper__image_butterfly {
+          max-width: 100%; } }
+    .picture-wrapper__image_rounded-water {
+      height: auto;
+      max-width: 100%;
+      max-height: 120vh; }
+    .picture-wrapper__image_tall-girl {
+      height: 90vh;
+      margin: 10vh auto 0 auto; }
+    .picture-wrapper__image_nodes {
+      height: auto;
+      max-height: 80vh;
+      max-width: 100%; }
+    .picture-wrapper__image_horse {
+      height: auto;
+      min-height: 80vh;
+      max-height: 100vh; }
+    .picture-wrapper__image_chess {
+      height: auto;
+      max-height: 90vh;
+      max-width: 100%; }
+    .picture-wrapper__image_fireworks {
+      height: auto;
+      max-height: 80vh;
+      max-width: 100%; }
+    .picture-wrapper__image_deadpool {
+      height: auto;
+      max-height: 40vh;
+      max-width: 100%;
+      margin: auto 0 0 0; }
+    .picture-wrapper__image_browsers {
+      height: auto;
+      max-height: 80vh;
+      max-width: 100%; }
+    .picture-wrapper__image_technologies {
+      height: auto;
+      max-height: 80vh;
+      max-width: 100%; }
+
+.phrase {
+  font-size: 5rem;
+  position: absolute;
+  display: block;
+  top: 65%;
+  left: 5%;
+  z-index: 8;
+  text-shadow: 0.25rem 0.1rem 0.25rem #ffa04099, -0.25rem -0.1rem 0.25rem #ffa040a8;
+  transition: left 1s, transform 1s;
+  color: #fff0;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase; }
